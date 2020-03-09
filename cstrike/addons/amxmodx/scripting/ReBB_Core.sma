@@ -32,9 +32,6 @@ Thx for the mod idea and original code
 #include <time>
 #include <re_basebuilder>
 
-// Автосоздание конфига
-#define AUTO_CFG
-
 new const VERSION[] = "0.3.10 Alpha";
 
 // List of client commands that open zombie class menu
@@ -367,10 +364,6 @@ public plugin_init() {
 
     RegisterHooks();
     RegisterCvars();
-
-#if defined AUTO_CFG
-    AutoExecConfig(true, "ReBaseBuilder", "ReBaseBuilder");
-#endif
 
     for(new i; i < sizeof(MENU_CMDS); i++) {
         register_clcmd(MENU_CMDS[i], "Zombie_Menu");
